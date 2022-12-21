@@ -26,6 +26,16 @@
     --box-shadow: 0 2rem 3rem var(--color-light)
 }
 
+/*===============Dark Theme Varibales==================*/
+.dark-theme-variables{
+    --color-background: #181a1e;
+    --color-white: #202528;
+    --color-dark: #edeffd;
+    --color-dark-varient: #a3bdcc;
+    --color-light: rgb(0,0,0,0.4);
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -573,6 +583,8 @@ main .recent-orders a{
 
 }
 
+/*======================Media Query Phone=========================*/
+
 @media screen and (max-width:768px){
     
     .container{
@@ -581,7 +593,6 @@ main .recent-orders a{
     }
 
     aside{
-        display: none;
         position: fixed;
         left:0;
         background: var(--color-white);
@@ -589,8 +600,15 @@ main .recent-orders a{
         z-index: 3; /*makes sidebar sit ontop of everything*/
         box-shadow: 1rem 3rem 4rem var(--color-light);
         height: 100vh;
-        padding-right: var(--card-padding)
-        
+        padding-right: var(--card-padding);
+        display: none;
+        animation: showMenu 400ms ease forwards;
+    }
+
+    @keyframes showMenu {
+        to{
+            left: 0;
+        } 
     }
 
     aside .logo{
