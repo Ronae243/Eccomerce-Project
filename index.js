@@ -1,7 +1,26 @@
 const sideMenu = document.querySelector("aside");
+const sideMenuOp = document.querySelector(".sidebar");
+const sideMenuOp_Ch = sideMenuOp.getElementsByTagName("a");
 const menuBtn = document.querySelector("#menu-btn");
 const closeBtn = document.querySelector("#close-btn");
 const themeToggler = document.querySelector(".theme-toggler");
+
+for (const sMenu of sideMenuOp_Ch){
+  sMenu.addEventListener("click",() =>{
+    // Get a reference to all elements with the active class
+    const activeElements = document.querySelectorAll('.active');
+
+    // Loop through the active elements and remove the active class
+    for (const activeElement of activeElements) {
+      activeElement.classList.remove('active');
+    }
+
+    // Add the active class to the element that was just clicked
+    sMenu.classList.add('active');
+  });
+}
+
+
 
 //show sidebar
 menuBtn.addEventListener("click",() => {
